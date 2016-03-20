@@ -3,9 +3,10 @@
 </div>
 
 {{#if editing}}
-  {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobiledoc") as |editor|}}
+  {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobiledoc") cards=cards as |editor|}}
     {{mobiledoc-toolbar editor=editor}}
+    <button {{action editor.addCardInEditMode 'cards/code-block'}}>Code block</button>
   {{/mobiledoc-editor}}
   {{else}}
-  {{mobiledoc-dom-renderer mobiledoc=(readonly mobiledoc)}}
+  {{render-mobiledoc mobiledoc=(readonly mobiledoc) cardNames=cardNames}}
 {{/if}}
