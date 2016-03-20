@@ -11,7 +11,6 @@ EditablePageComponent = Ember.Component.extend
       cards: [],
       sections: []
     @set 'mobiledoc', doc unless @get('mobiledoc')
-    @set 'editing', false
   mobiledocObserver: Ember.observer 'mobiledoc', (->
     @set 'editedMobiledoc', @get('mobiledoc')
   ).on('init')
@@ -19,8 +18,9 @@ EditablePageComponent = Ember.Component.extend
     toggleEdit: ->
       @toggleProperty 'editing'
       return
-    updateMobileDoc: (newMobiledoc) ->
+    updateMobiledoc: (newMobiledoc) ->
       @set 'mobiledoc', newMobiledoc
+      this["on-change"]?(newMobiledoc)
       return
 
 `export default EditablePageComponent`

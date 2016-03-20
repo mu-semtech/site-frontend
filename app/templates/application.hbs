@@ -1,3 +1,9 @@
 <h1 id="title">Welcome to MobileDoc example renderer</h1>
 
-{{editable-page mobiledoc=(readonly editedMobileDoc)}}
+{{editable-page on-change=(action "updateMobiledoc") editing=true}}
+
+<hr />
+
+<pre>
+  {{mobiledocAsString}}
+</pre>

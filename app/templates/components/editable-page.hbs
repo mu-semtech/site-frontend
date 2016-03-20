@@ -3,7 +3,7 @@
 </div>
 
 {{#if editing}}
-  {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobileDoc") as |editor|}}
+  {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobiledoc") as |editor|}}
     {{mobiledoc-toolbar editor=editor}}
   {{/mobiledoc-editor}}
   {{else}}
