@@ -1,3 +1,11 @@
-<h2 id="title">Welcome to Ember</h2>
+<h1 id="title">Welcome to MobileDoc example renderer</h1>
 
-{{outlet}}
+<h2>Entry</h2>
+{{#mobiledoc-editor mobiledoc=mobileDoc on-change=(action "updateMobileDoc") as |editor|}}
+  {{mobiledoc-toolbar editor=editor}}
+{{/mobiledoc-editor}}
+
+<h2>Raw</h2>
+<pre>{{editedMobileDocAsString}}</pre>
+
+<h2>Output</h2>
