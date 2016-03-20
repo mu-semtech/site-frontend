@@ -1,0 +1,7 @@
+<h1>{{model.title}}</h1>
+
+{{editable-page readonly=true mobiledoc=(readonly model.content)}}
+
+<hr />
+
+{{link-to 'edit' 'docs.page.edit' model}}

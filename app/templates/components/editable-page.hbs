@@ -1,7 +1,8 @@
-<div class="controls">
-  <button {{action "toggleEdit"}}>Toggle edit</button>
-</div>
-
+{{#unless readonly}}
+  <div class="controls">
+    <button {{action "toggleEdit"}}>Toggle edit</button>
+  </div>
+{{/unless}}
 {{#if editing}}
   {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobiledoc") cards=cards as |editor|}}
     {{mobiledoc-toolbar editor=editor}}

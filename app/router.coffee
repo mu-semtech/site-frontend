@@ -6,7 +6,10 @@ Router = Ember.Router.extend
 
 
 Router.map ->
-  @route 'docs/pages', ->
+  @route 'docs', ->
+    @route 'pages', ->
+    @route 'page', { path: "page/:page_id" }, ->
+      @route 'edit'
 
 
 `export default Router`
