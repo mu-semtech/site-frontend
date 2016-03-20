@@ -1,6 +1,6 @@
 `import Ember from 'ember'`
 
-ApplicationController = Ember.Controller.extend
+IndexController = Ember.Controller.extend
   actions:
     updateMobiledoc: (mobiledoc) ->
       @set 'mobiledoc', mobiledoc
@@ -10,4 +10,4 @@ ApplicationController = Ember.Controller.extend
     return JSON.stringify @get('mobiledoc')
 
 
-`export default ApplicationController`
+`export default IndexController`
