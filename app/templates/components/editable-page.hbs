@@ -1,0 +1,11 @@
+<div class="controls">
+  <button {{action "toggleEdit"}}>Toggle edit</button>
+</div>
+
+{{#if editing}}
+  {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobileDoc") as |editor|}}
+    {{mobiledoc-toolbar editor=editor}}
+  {{/mobiledoc-editor}}
+  {{else}}
+  {{mobiledoc-dom-renderer mobiledoc=(readonly mobiledoc)}}
+{{/if}}
