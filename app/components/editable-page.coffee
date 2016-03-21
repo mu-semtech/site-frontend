@@ -13,9 +13,10 @@ EditablePageComponent = Ember.Component.extend
       sections: []
     @set 'mobiledoc', doc unless @get('mobiledoc')
   cards: Ember.computed ->
-    [ createComponentCard('cards/code-block') ]
+    [ createComponentCard('cards/code-block'),
+      createComponentCard('cards/parallax-image') ]
   cardNames: Ember.computed ->
-    ["cards/code-block"]
+    ["cards/code-block", "cards/parallax-image"]
   mobiledocObserver: Ember.observer 'mobiledoc', (->
     @set 'editedMobiledoc', @get('mobiledoc')
   ).on('init')

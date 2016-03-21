@@ -8,3 +8,7 @@ $secondary-color: color("blue", "base");
 @import 'components/variables';
 @import 'materialize';
 @import 'ember-cli-materialize';
+
+.__mobiledoc-card {
+    width: 100%;
+}
