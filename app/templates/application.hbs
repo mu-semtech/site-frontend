@@ -1,3 +1,11 @@
+{{#md-navbar name='mu.semte.ch documentation'}}
+  <!-- A workaround to get the "active" class
+    to apply to the active <li> automatically -->
+  {{#link-to 'docs.pages' tagName='li'}}
+    {{link-to 'Pages' 'docs.pages'}}
+  {{/link-to}}
+{{/md-navbar}}
+
 {{outlet}}
 
 {{!-- ember-cli-materialize modal container --}}
