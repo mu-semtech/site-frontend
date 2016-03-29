@@ -10,11 +10,11 @@ CardsParallaxImageEditorComponent = Ember.Component.extend
     @$().css
       width: "#{width}px"
       "margin-left": "-#{left}px"
-  content: Ember.computed 'payload', ->
-    @get('payload') or ""
+  content: Ember.computed 'payload.url', ->
+    @get('payload.url') or ""
   actions:
     saveCard: ->
-      @saveCard @get('content')
+      @saveCard url: @get('content')
 
 
 `export default CardsParallaxImageEditorComponent`

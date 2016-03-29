@@ -10,8 +10,8 @@ CardsParallaxImageComponent = Ember.Component.extend
     @$().css
       width: "#{width}px"
       "margin-left": "-#{left}px"
-  url: Ember.computed 'payload', ->
-    @get('payload') or ""
+  url: Ember.computed 'payload.url', ->
+    @get('payload.url') or ""
   click: ->
     @editCard() if @get('editor')
   actions:
