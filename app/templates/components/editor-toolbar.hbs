@@ -1,0 +1,34 @@
+<span {{action editor.toggleSection 'h1'}} class={{if editor.activeSectionTagNames.isH1 'active'}}>
+  <span><i class="material-icons">title</i></span>
+</span>
+<span {{action editor.toggleSection 'h2'}} class={{if editor.activeSectionTagNames.isH2 'active'}}>
+  <span><i class="material-icons">text_fields</i></span>
+</span>
+<span {{action editor.toggleSection 'h3'}} class={{if editor.activeSectionTagNames.isH3 'active'}}>
+  <span><i class="material-icons">text_fields</i></span>
+</span>
+<span {{action editor.toggleLink}}>
+  <span><i class="material-icons">insert_link</i></span>
+</span>
+<span {{action editor.toggleMarkup 'em'}} class={{if editor.activeMarkupTagNames.isEm 'active'}}>
+  <span><i class="material-icons">format_italic</i></span>
+</span>
+<span {{action editor.toggleMarkup 'strong'}} class={{if editor.activeMarkupTagNames.isStrong 'active'}}>
+  <span><i class="material-icons">format_bold</i></span>
+</span>
+<span {{action editor.toggleSection 'ul'}}>
+  <span><i class="material-icons">format_list_bulleted</i></span>
+</span>
+<span {{action editor.toggleSection 'ol'}}>
+  <span><i class="material-icons">format_list_numbered</i></span>
+</span>
+{{#each menus as |menu|}}
+  {{#md-btn-dropdown text=menu.name}}
+    {{#each menu.items as |menuItem|}}
+      <li {{action editor.addCardInEditMode menuItem.component}}>
+        <span>{{menuItem.name}}</span>
+      </li>
+    {{/each}}
+  {{/md-btn-dropdown}}
+{{/each}}
+
