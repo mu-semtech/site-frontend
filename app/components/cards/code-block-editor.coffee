@@ -1,14 +1,11 @@
 `import Ember from 'ember'`
 
 CardsCodeBlockEditorComponent = Ember.Component.extend
-  code: Ember.computed 'payload', ->
-    if Ember.typeOf(@get('payload')) == "string"
-      @get('payload')
-    else
-      ""
+  code: Ember.computed 'payload.content', ->
+    @get('payload.content') or ""
   actions:
     saveCard: ->
-      @saveCard @get('code')
+      @saveCard content: @get('code')
 
 
 `export default CardsCodeBlockEditorComponent`
