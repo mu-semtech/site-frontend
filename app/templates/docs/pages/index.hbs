@@ -1,5 +1,13 @@
-<ul>
-  {{#each model as |page|}}
-    <li>{{link-to page.title 'docs.page' page.id}}</li>
-  {{/each}}
-</ul>
+<div class="container">
+  <ul>
+    {{#each model as |page|}}
+      <li>{{link-to page.title 'docs.page' page.id}}</li>
+    {{/each}}
+  </ul>
+
+  <form>
+    <h1>Add page</h1>
+    {{md-input value=newPageTitle label='New page title'}}
+    {{md-btn text='New page' action='newPage'}}
+  </form>
+</div>
