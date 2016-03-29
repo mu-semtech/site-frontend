@@ -12,3 +12,7 @@ $secondary-color: color("blue", "base");
 .__mobiledoc-card {
     width: 100%;
 }
+
+div.fixed-width-card {
+    max-width: none;
+}
