@@ -1,5 +1,6 @@
 `import Ember from 'ember'`
 `import createComponentCard from 'ember-mobiledoc-editor/utils/create-component-card'`
+`import menuSpec from '../config/editor/menus'`
 
 EditablePageComponent = Ember.Component.extend
   classNames: ['editable-page']
@@ -12,11 +13,16 @@ EditablePageComponent = Ember.Component.extend
       cards: [],
       sections: []
     @set 'mobiledoc', doc unless @get('mobiledoc')
-  cards: Ember.computed ->
-    [ createComponentCard('cards/code-block'),
-      createComponentCard('cards/parallax-image') ]
-  cardNames: Ember.computed ->
-    ["cards/code-block", "cards/parallax-image"]
+  cards: Ember.computed 'cardNames', ->
+    @get('cardNames').map createComponentCard
+  menus: Ember.computed ->
+    menuSpec.menus
+  cardNames: Ember.computed 'menus', ->
+    cardNames = []
+    @get('menus').map (menu) ->
+      menu.items.map (menuItem) ->
+        cardNames.pushObject( menuItem.component )
+    cardNames
   mobiledocObserver: Ember.observer 'mobiledoc', (->
     @set 'editedMobiledoc', @get('mobiledoc')
   ).on('init')

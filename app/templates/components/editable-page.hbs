@@ -6,9 +6,19 @@
 {{#if editing}}
   {{#mobiledoc-editor mobiledoc=(readonly mobiledoc) on-change=(action "updateMobiledoc") cards=cards as |editor|}}
     {{mobiledoc-toolbar editor=editor}}
-    <button {{action editor.addCardInEditMode 'cards/code-block'}}>Code block</button>
-    <button {{action editor.addCardInEditMode 'cards/parallax-image'}}>Parallax</button>
+    {{#each menus as |menu|}}
+      {{#md-btn-dropdown text=menu.name}}
+        {{#each menu.items as |menuItem|}}
+          <li {{action editor.addCardInEditMode menuItem.component}}>
+            <span>{{menuItem.name}}</span>
+          </li>
+        {{/each}}
+      {{/md-btn-dropdown}}
+    {{/each}}
   {{/mobiledoc-editor}}
   {{else}}
   {{render-mobiledoc mobiledoc=(readonly mobiledoc) cardNames=cardNames}}
 {{/if}}
+
+
+{{cards/star-rating rating=3 maxRating=10}}
