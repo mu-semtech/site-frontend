@@ -12,9 +12,7 @@ export default {
       name: "Content",
       items: [
         { name: "Code block",
-          component: "cards/code-block" },
-        { name: "Stars",
-          component: "cards/star-rating" }
+          component: "cards/code-block" }
       ]
     }
   ],
