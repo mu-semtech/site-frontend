@@ -1,11 +1,9 @@
-{{link-to "all pages" "docs.pages"}}
+{{link-to "Editable pages" "docs.pages"}}
 
-<h1 id="title">Welcome to MobileDoc example renderer</h1>
-
-{{editable-page on-change=(action "updateMobiledoc") editing=true}}
-
-<hr />
-
-<pre>
-  {{mobiledocAsString}}
-</pre>
+<ul>
+  {{#each shownPages as |page|}}
+  <li>
+    {{link-to page.topic 'docs.page' page}}
+  </li>
+  {{/each}}
+</ul>
