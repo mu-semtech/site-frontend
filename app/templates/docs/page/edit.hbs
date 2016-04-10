@@ -1,4 +1,15 @@
 <div class="container">
+  <h1>Meta info</h1>
+  <div class="row">
+    {{md-input label="Title" value=page.title}}
+  </div>
+  <div class="row">
+    {{md-input label="Topic" value=page.topic}}
+  </div>
+  <div class="row">
+    {{md-input label="Order" value=page.order type="number"}}
+  </div>
+  <h1>Content:</h1>
   {{editable-page mobiledoc=page.content on-change=(action "updateContent") editing=true}}
 </div>
 
