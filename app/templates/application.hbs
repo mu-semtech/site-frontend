@@ -4,6 +4,11 @@
   {{#link-to 'docs.pages' tagName='li'}}
     {{link-to 'Pages' 'docs.pages'}}
   {{/link-to}}
+  {{#each shownPages as |page|}}
+    {{#link-to 'docs.page' page tagName='li'}}
+      {{link-to page.topic 'docs.page' page}}
+    {{/link-to}}
+  {{/each}}
 {{/md-navbar}}
 
 {{outlet}}
