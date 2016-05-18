@@ -5,5 +5,7 @@ Page = DS.Model.extend
   content: DS.attr('json')
   topic: DS.attr()
   order: DS.attr('number')
+  slug: DS.attr()
+
 
 `export default Page`
