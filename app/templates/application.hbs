@@ -1,9 +1,6 @@
 {{#md-navbar name='mu.semte.ch documentation'}}
   <!-- A workaround to get the "active" class
     to apply to the active <li> automatically -->
-  {{#link-to 'docs.pages' tagName='li'}}
-    {{link-to 'Pages' 'docs.pages'}}
-  {{/link-to}}
   {{#each shownPages as |page|}}
     {{#link-to 'docs.page' page tagName='li'}}
       {{link-to page.topic 'docs.page' page}}
